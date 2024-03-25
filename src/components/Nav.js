@@ -52,6 +52,16 @@ function Nav() {
                   MENU
                 </Link>
               </li>
+              <li class="nav-item">
+                <Link
+                  to="/CustomerOrderPage"
+                  class="nav-link active"
+                  aria-current="page"
+                  style={{color:"white"}}
+                >
+                  MENU ORDER
+                </Link>
+              </li>
             </ul>
             <form class="d-flex" role="search">
               <input
