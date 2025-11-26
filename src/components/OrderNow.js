@@ -34,12 +34,17 @@ function OrderNow() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    order.amount = parseInt(food.price) * parseInt(order.quantity);
-    const result = await axios.post("http://localhost:5000/addOrder", order);
-    console.log("result",result);
-    console.log("orders",order);
-    console.log("id:",result.data.result._id);
-    navigate(`/Payment/${result.data.result._id}`);
+    try {
+      order.amount = parseInt(food.price) * parseInt(order.quantity);
+      const result = await axios.post("http://localhost:5000/addOrder", order);
+      console.log("result", result);
+      console.log("orders", order);
+      console.log("id:", result.data.result._id);
+      navigate(`/Payment/${result.data.result._id}`);
+    } catch (error) {
+      console.error("Error placing order:", error);
+      alert("Failed to place order. Please try again.");
+    }
   };
 
   const handleCancel = () => {
