@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -7,27 +7,28 @@ function ConfirmOrder() {
   const navigate = useNavigate();
 
   const [food, setFood] = useState({});
+  const [deliveryAddress, setDeliveryAddress] = useState("");
   const [order, setOrder] = useState({
-    userId: localStorage.getItem("userid"),
+    userId: localStorage.getItem("staffId"),
     quantity: 1,
     foodid: foodid.id,
     amount: 0,
-    customername: "", 
-    date: new Date(), 
+    customername: "",
+    date: new Date(),
   });
 
-  const fetchFood = async () => {
+  const fetchFood = useCallback(async () => {
     try {
       const response = await axios.post(`http://localhost:5000/viewone/${foodid.id}`);
       setFood(response.data.data);
     } catch (error) {
       console.error("Error fetching food items:", error);
     }
-  };
+  }, [foodid.id]);
 
   useEffect(() => {
     fetchFood();
-  }, []);
+  }, [fetchFood]);
 
   const handleChange = (e) => {
     setOrder({ ...order, [e.target.name]: e.target.value });
@@ -35,13 +36,26 @@ function ConfirmOrder() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    order.amount = parseInt(food.price * order.quantity);
+    if (!order.userId) {
+      alert("Please login as staff first");
+      return;
+    }
+    if (!deliveryAddress.trim()) {
+      alert("Please enter a delivery address");
+      return;
+    }
+    order.amount = parseInt(food.price) * parseInt(order.quantity);
+    order.deliveryAddress = deliveryAddress;
     try {
-      const result = await axios.post(`http://localhost:5000/staffaddorder/${order.userId}`, order);
+      const result = await axios.post(`http://localhost:5000/staffaddorder/${foodid.id}`, order);
       console.log("result", result);
       console.log("orders", order);
-      alert("Order Confirmed");
-      navigate("/Staffvieworder")
+      if (result.data.status === 200) {
+        alert("Order Confirmed");
+        navigate("/StaffviewOrder");
+      } else {
+        alert("Failed to confirm order");
+      }
     } catch (error) {
       console.error("Error confirming order:", error);
       alert("Failed to confirm order");
@@ -86,6 +100,19 @@ function ConfirmOrder() {
             placeholder="Enter Customer Name"
             value={order.customername}
             onChange={(e) => handleChange(e)}
+            required
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="deliveryAddress" className="form-label fw-semibold">Delivery Address:</label>
+          <textarea
+            className="form-control"
+            id="deliveryAddress"
+            name="deliveryAddress"
+            placeholder="Enter Delivery Address"
+            value={deliveryAddress}
+            onChange={(e) => setDeliveryAddress(e.target.value)}
+            required
           />
         </div>
         <div className="mb-3">

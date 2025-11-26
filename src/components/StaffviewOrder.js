@@ -11,7 +11,7 @@ function StaffviewOrder() {
   const fetchStaffOrders = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/stafforderdetails/${localStorage.getItem("userid")}`
+        `http://localhost:5000/stafforderdetails/${localStorage.getItem("staffid")}`
       );
       setStaffOrders(response.data.result);
     } catch (error) {
@@ -27,6 +27,7 @@ function StaffviewOrder() {
           <ul className="list-group">
             {staffOrders.map(order => (
               <li key={order._id} className="list-group-item">
+                 <strong>Customer Name:</strong> {order.customername}<br />
                 <strong>Food Name:</strong> {order.foodid.foodname}<br />
                 <strong>Quantity:</strong> {order.count}<br />
                 <strong>Date:</strong> {new Date(order.date).toLocaleDateString()}
