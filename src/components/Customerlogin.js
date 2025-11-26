@@ -36,43 +36,43 @@ function Customerlogin() {
   }
 
   return (
-    <div className="customerlogin" style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
-      <div className="form-control" style={{ width: "30rem", backgroundColor: "lightgray", padding: "20px", borderRadius: "5px" }}>
-        <form onSubmit={submit}>
-          <h1 className="text-center" style={{ color: "black", textDecoration: "none" }}>LOG IN</h1>
-          <div className="d-flex">
-            <label className="form-label mt-2 w-50" style={{ color: "black" }}>Email:</label>
-            <input
-              className="form-control"
-              type="email"
-              name="email"
-              placeholder="Enter your valid email"
-              onChange={Change}
-              style={{ marginLeft: "1rem" }}
-              required
-            />
-          </div>
-          <br />
-          <div className="d-flex">
-            <label className="form-label mt-2 w-50" style={{ color: "black" }}>Password:</label>
-            <input
-              className="form-control"
-              type="password"
-              name="password"
-              placeholder="Enter your password"
-              onChange={Change}
-              style={{ marginLeft: "1rem" }}
-              required
-            />
-          </div>
-          <br />
-          <br />
-          <button type="submit" style={{ backgroundColor: "Red", color: "black", marginLeft: "8.5rem" }}>Log in</button>
-          <br />
-          <p style={{ marginLeft: "7.5rem" }}>
-            <a href="/Forgotpassword">Forgot your Password?</a>
-          </p>
-        </form>
+    <div className="customerlogin d-flex justify-content-center align-items-center vh-100">
+      <div className="card shadow-lg" style={{ width: "30rem", backgroundColor: "white" }}>
+        <div className="card-body p-4">
+          <h1 className="card-title text-center mb-4" style={{ color: "#667eea" }}>LOG IN</h1>
+          <form onSubmit={submit}>
+            <div className="mb-3">
+              <label htmlFor="email" className="form-label">Email:</label>
+              <input
+                className="form-control"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your valid email"
+                onChange={Change}
+                required
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="password" className="form-label">Password:</label>
+              <input
+                className="form-control"
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+                onChange={Change}
+                required
+              />
+            </div>
+            <div className="d-grid">
+              <button type="submit" className="btn btn-primary">Log in</button>
+            </div>
+            <div className="text-center mt-3">
+              <a href="/Forgotpassword" className="text-decoration-none">Forgot your Password?</a>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );

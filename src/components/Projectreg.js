@@ -1,5 +1,5 @@
-import axios from "axios";
 import React, { useState } from "react";
+import axios from "axios"
 import {useNavigate} from "react-router-dom";
 function Projectreg() {
   const navigate=useNavigate()
@@ -41,9 +41,9 @@ function Projectreg() {
       
       
       <form onSubmit={Submit}>
-      <h1>Create Your Account</h1>
+      <h1 className="form-title">Create Your Account</h1>
       <div class="container">
-        <img src=" https://static.vecteezy.com/system/resources/thumbnails/015/399/460/small/trendy-student-concepts-vector.jpg"/></div>
+       </div>
         <div class="d-flex p-2">
           <label class="form-label mt-2 w-50">Firstname:</label>
           <input

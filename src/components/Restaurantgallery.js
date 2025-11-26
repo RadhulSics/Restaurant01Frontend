@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Restaurantgallery() {
   return (
-    <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+    <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" ,background: ' rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%)'}}>
       <div style={{ position: "relative" }}>
         <img src={food1} style={{ width: "100%", height: "auto" }} alt="food1" />
         <div
@@ -23,19 +23,19 @@ function Restaurantgallery() {
             textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",
           }}
         >
-          WELCOME TO OUR RESTAURANT
+         Serving Happiness on Every Plate
         </div>
       </div>
       
-      <div className="container my-5">
+      <div className="container my-5" style={{ background: 'rgba(0, 0, 0, 0.8)', padding: '20px', borderRadius: '10px' }}>
         <div className="row">
           <div className="col-md-4">
-            <div className="card" style={{ position: "relative" }}>
-              <img src={dining} className="card-img-top" alt="Dining Available" />
-              <div 
+            <div className="card h-100" style={{ position: "relative" }}>
+              <img src={dining} className="card-img-top" alt="Dining Available" style={{ height: '300px', width: '100%', objectFit: 'cover' }} />
+              <div
                 className="card-img-overlay"
                 style={{
-                  background: 'rgba(0, 0, 0, 0.5)',
+                  background: 'linear-gradient(90deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%)',
                   color: 'white',
                   display: 'flex',
                   flexDirection: 'column',
@@ -48,12 +48,12 @@ function Restaurantgallery() {
             </div>
           </div>
           <div className="col-md-4">
-            <div className="card" style={{ position: "relative" }}>
-              <img src={delivery} className="card-img-top" alt="Home Delivery" />
-              <div 
+            <div className="card h-100" style={{ position: "relative" }}>
+              <img src={delivery} className="card-img-top" alt="Home Delivery" style={{ height: '300px', width: '100%', objectFit: 'cover' }} />
+              <div
                 className="card-img-overlay"
                 style={{
-                  background: 'rgba(0, 0, 0, 0.5)',
+                  background: 'linear-gradient(90deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%)',
                   color: 'white',
                   display: 'flex',
                   flexDirection: 'column',
@@ -66,12 +66,12 @@ function Restaurantgallery() {
             </div>
           </div>
           <div className="col-md-4">
-            <div className="card" style={{ position: "relative" }}>
-              <img src={event} className="card-img-top" alt="Event Catering" />
-              <div 
+            <div className="card h-100" style={{ position: "relative" }}>
+              <img src={event} className="card-img-top" alt="Event Catering" style={{ height: '300px', width: '100%', objectFit: 'cover' }} />
+              <div
                 className="card-img-overlay"
                 style={{
-                  background: 'rgba(0, 0, 0, 0.5)',
+                  background: 'linear-gradient(90deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%)',
                   color: 'white',
                   display: 'flex',
                   flexDirection: 'column',
@@ -86,11 +86,11 @@ function Restaurantgallery() {
         </div>
       </div>
 
-      <footer style={{ textAlign: "center", padding: "1rem", background: "#f8f9fa" }}>
+      <footer style={{ textAlign: "center", padding: "1rem", background: "linear-gradient(90deg, #667eea 0%, #764ba2 100%)", color: "white" }}>
         &copy; 2024 UDHITH AND Co. RESTAURANT. All rights reserved.
       </footer>
 
-      <div style={{ textAlign: "center", padding: "1rem", background: "#e9ecef" }}>
+      <div style={{ textAlign: "center", padding: "1rem", background: "linear-gradient(90deg, #667eea 0%, #764ba2 100%)", color: "white" }}>
         <h5>Contact Us</h5>
         <p>12/3 Food Street, Kazhakootam, Trivandrum</p>
         <p>Phone: +91 9768335511</p>

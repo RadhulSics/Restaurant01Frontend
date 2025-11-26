@@ -1,8 +1,4 @@
-
-
 .customerlogin {
-    background-image: url("https://www.wakamerestaurant.com/resourcefiles/gallery-images/dinner-spread.jpg");
-    background-size: cover;
-    height: 800px;
-    width: 1600px;
+    background: linear-gradient(90deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 100vh;
 }

@@ -34,15 +34,16 @@ function Forgotpassword() {
   };
 
   return (
-    <div className="mb-5">
+    <div className="mb-5" style={{ background: "linear-gradient(90deg, #667eea 0%, #764ba2 100%)", minHeight: "100vh", display: "flex", justifyContent: "center", alignItems: "center" }}>
       <form>
         <div
           className="form-control mx-auto d-block"
           style={{
             width: "25rem",
-            marginTop: "7rem",
-            backgroundColor: "lightblue",
+            backgroundColor: "rgba(255, 255, 255, 0.9)",
             textAlign: "center",
+            borderRadius: "10px",
+            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
           }}
         >
           <div className="p-2 w-100">

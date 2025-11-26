@@ -37,9 +37,9 @@ function Staffslogin() {
   return (
     <div className="d-flex justify-content-center align-items-center vh-100">
       <form>
-        <div className="form-control mx-auto d-block" style={{ width: "21rem", backgroundColor: "rgba(128, 128, 128, 0.700)" }}>
+        <div className="mx-auto d-block" style={{ width: "21rem", backgroundColor: "hsla(0, 0%, 100%, 1.00)" }}>
           <div className="p-2 w-100">
-            <h2 className="text-center mt-3 mb-3" style={{ textDecoration: "none" }}>Staff Login</h2>
+            <h2 className="text-center mt-3 mb-3" style={{ textDecoration: "none", color:'blue' }}>Staff Login</h2>
           </div>
           <div className="d-flex p-2">
             <label className="form-label mt-2" style={{ width: "5rem" }}>Username:</label>

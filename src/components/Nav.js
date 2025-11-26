@@ -26,7 +26,7 @@ function Nav() {
     <div className="sticky-top">
       <nav className="navbar navbar-expand-lg bg-body-tertiary shadow-lg p-3">
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/" style={{ color: "blue" }}>
+          <Link className="navbar-brand custom-brand" to="/">
             UDHITH AND Co. RESTAURANT
           </Link>
           <button
